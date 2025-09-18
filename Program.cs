@@ -38,3 +38,24 @@ for (int i = 1; i <= number; i++)
 
     Console.WriteLine(output);
 }
+
+// Approach 3: Dictionary Mapping
+Console.WriteLine("Approach 3: Dictionary Mapping");
+
+var mapping = new Dictionary<int, string>
+{
+    { 3, "Fizz" },
+    { 5, "Buzz" }
+};
+
+for (int i = 1; i <= number; i++)
+{
+    string output = "";
+    foreach (var kvp in mapping)
+    {
+        if (i % kvp.Key == 0) output += kvp.Value;
+    }
+    if (output == "") output = i.ToString();
+    
+    Console.WriteLine(output);
+}
